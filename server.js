@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const studentRoutes = require("./src/routes/students");
+require("dotenv").config();
 
 const app = express();
 
@@ -27,6 +28,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Serveur démarré sur http://localhost:${process.env.PORT}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(
+    `Serveur démarré sur http://localhost:${process.env.PORT || 3000}`
+  );
 });

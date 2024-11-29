@@ -1,9 +1,16 @@
 const { Pool } = require("pg");
+require("dotenv").config();
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false, // Nécessaire pour certains hébergeurs comme Heroku
+    require: true,
+    rejectUnauthorized: true,
   },
 });
+
+pool.on("error", (err) => {
+  console.error("Erreur inattendue du pool de connexion", err);
+});
+
 module.exports = pool;
