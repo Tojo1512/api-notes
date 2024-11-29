@@ -1,5 +1,5 @@
 const StudentService = require("../services/studentService");
-const BaseResponse = require("../src/services/models/BaseResponse");
+const BaseResponse = require("../models/BaseResponse");
 
 const StudentController = {
   async getGrades(req, res) {
