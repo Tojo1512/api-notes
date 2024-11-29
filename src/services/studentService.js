@@ -1,5 +1,5 @@
 const pool = require("../config/db");
-const BaseResponse = require("../models/BaseResponse");
+const BaseResponse = require("../models/baseResponse");
 
 const StudentService = {
   async getGradesBySemester(idEtudiant, semestre) {
